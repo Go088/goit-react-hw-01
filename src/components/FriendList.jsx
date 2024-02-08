@@ -1,12 +1,12 @@
 export const FriendList = ({friends}) => {
     return (
         <ul>
-            {friends.map((friend) =>
-                <li key={friend.id}>
+            {friends.map(({ id, avatar, name, isOnline }) =>
+                <li key={id}>
                     <FriendListItem
-                        avatar={friend.avatar}
-                        name={friend.name}
-                        isOnline={friend.isOnline}
+                        avatar={avatar}
+                        name={name}
+                        isOnline={isOnline}
                     />
             </li>)}
         </ul>
@@ -22,3 +22,4 @@ const FriendListItem = ({avatar, name, isOnline}) => {
         </div>
     )
 }
+
